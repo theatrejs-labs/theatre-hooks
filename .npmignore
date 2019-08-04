@@ -1,0 +1,10 @@
+# .npmignore 
+
+src
+tsconfig.json
+tslint.json
+.prettierrc
+examples
+.babelrc
+.gitignore
+webpack.config.js
