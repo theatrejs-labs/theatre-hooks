@@ -1,14 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import * as Theatre from 'theatre';
+import { useTheatre } from '../../src';
 
-import Applciation from '../../src';
+const project = Theatre.getProject('My Awesome Project');
+const timeline = project.getTimeline('My Awesome Timeline');
 
-const App = ()=>{
+const App = () => {
+  const { x, y } = useTheatre('Box', ['x', 'y'], timeline)
+  
   return (
-    <Applciation />
+    <div>{x} {y}</div>
   );
 }
 
 const root = document.querySelector('#root');
 
-ReactDOM.render(<Apps />, root);
+ReactDOM.render(<App />, root);

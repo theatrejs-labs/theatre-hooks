@@ -1,6 +1,7 @@
 /*** webpack.config.js ***/
 
 const path = require('path');
+const { CheckerPlugin } = require('awesome-typescript-loader')
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const htmlWebpackPlugin = new HtmlWebpackPlugin({
     template: path.join(__dirname, "examples/browser/index.html"),
@@ -22,7 +23,7 @@ module.exports = {
             }
         ]
     },
-    plugins: [htmlWebpackPlugin],
+    plugins: [htmlWebpackPlugin, new CheckerPlugin()],
     resolve: {
         extensions: [".js", ".jsx", ".ts", ".tsx"]
     },

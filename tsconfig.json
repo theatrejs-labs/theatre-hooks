@@ -14,6 +14,13 @@
     "isolatedModules": false,
     "jsx": "preserve"
   },
+  "awesomeTypescriptLoaderOptions": {
+    "useBabel": true,
+    "babelOptions": {
+        "babelrc": true
+    },
+    "babelCore": "@babel/core"
+  },
   "include": ["src"],
   "exclude": ["node_modules", "**/__tests__/*"]
 }
