@@ -1,6 +1,6 @@
 {
   "name": "@theatre/hooks",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -53,7 +53,7 @@
     "webpack-cli": "^3.3.3",
     "webpack-dev-server": "^3.7.1"
   },
-  "dependencies": {
+  "peerDependencies": {
     "react": "^16.8.6",
     "theatre": "^0.2.0-dev.3"
   }
