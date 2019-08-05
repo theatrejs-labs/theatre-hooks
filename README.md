@@ -1,5 +1,7 @@
 # TheatreJS Hooks
 
+Using TheatreJS with React, easy as pie 🥧
+
 ## Installation
 
 ```bash
@@ -12,21 +14,33 @@ yarn install @theatre/hooks
 import React from 'react';
 import { useTheatre } from '@theatre/hooks';
 
-interface ITheatreState {
-    top: number,
-    left: number
+const project = Theatre.getProject('My Awesome Project');
+const timeline = project.getTimeline('My Awesome Timeline');
+
+const Component = () => {
+  const { x, y } = useTheatre('Box', ['x', 'y'], timeline);
+  
+  return (
+    <div>{x} {y}</div>
+  );
 }
+```
 
-export default () => {
-    const state = useTheatre<ITheatreState>({
-        initial: { top: 0, left: 0 },
-        object: 'Awesome DIV',
-        timeline: 'Awesome Timeline',
-        project: 'Awesome Project'
-    })
+Or **as a suggestion** you can put your timelines in an external file so you'll be able to use this hook like:
 
-    return (
-        <div style={state} />
-    )
+
+```typescript
+import React from 'react';
+import { useTheatre } from '@theatre/hooks';
+
+import { TLJumping, TLBouncing } from './Timelines'
+
+const Component = () => {
+  const { x, y } = useTheatre('Box', ['x', 'y'], TLJumping);
+  const { squish } = useTheatre('Box', ['squish'], TLBouncing);
+  
+  return (
+    <div>{x} {y} {squish}</div>
+  );
 }
 ```
