@@ -5,7 +5,7 @@ Using TheatreJS with React, easy as pie 🥧
 ## Installation
 
 ```bash
-yarn install @theatre/hooks
+yarn add @theatre/hooks
 ```
 
 ## Usage
